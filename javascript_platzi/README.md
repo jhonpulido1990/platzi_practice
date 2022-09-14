@@ -81,7 +81,15 @@ const nickname = "juandc";
 
 console.log("Mi nombre es " + completeName + ", pero prefiero que me digas " + nickname + ".");
 
-```function presentacion(name, lastname, nickname) {
+```const name = "Juan David";
+const lastname = "Castro Gallego";
+const nickname = "juandc";
+
+function presentacion(name, lastname, nickname) {
     console.log("Mi nombre es " + name + " " + lastname + ", pero prefiero que me digas " + nickname + ".");
 };
-presentacion("Juan David", "Castro Gallego", "juandc");```
+presentacion(name, lastname, nickname);```
+
+## Condicionales
+
+1. ¿Qué es un condicional?
