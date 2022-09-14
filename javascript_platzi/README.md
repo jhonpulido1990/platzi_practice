@@ -1,6 +1,9 @@
-# Variables y operaciones
+# Test de JavaScript
 
-## Responde las siguientes preguntas
+
+## Variables y operaciones
+
+### Responde las siguientes preguntas
 
 1. ¿Qué es una variable y para qué sirve?
 
@@ -20,7 +23,7 @@
 
     * con el operador +
 
-## Determina el nombre y tipo de dato para almacenar en variables la siguiente información
+### Determina el nombre y tipo de dato para almacenar en variables la siguiente información
 
 | Nombre | Typo de dato |
 |--------|--------------|
@@ -33,7 +36,7 @@
 | Dinero ahorrado | integer |
 | Deudas | integer |
 
-## Traduce a código JavaScript las variables del ejemplo anterior
+### Traduce a código JavaScript las variables del ejemplo anterior
 
 * let Nombre = ""
 * let Apellido = ""
@@ -44,7 +47,7 @@
 * let Dinero_ahorrado = 0
 * let Deudas = 0
 
-## Calcula e imprime las siguientes variables a partir de las variables del ejemplo anterior
+### Calcula e imprime las siguientes variables a partir de las variables del ejemplo anterior
 
 * let Nombre = "jhon"
 * let Apellido = "pulido"
@@ -52,4 +55,7 @@
 * let Dinero_ahorrado = 500000
 * let Deudas = 250000
 * let total = Dinero_ahorrado - Deudas
-* console.log(/`/${All_name}/`/)
+* console.log(`${All_name}`)
+* console.log(`${total}`)
+
+## Funciones
