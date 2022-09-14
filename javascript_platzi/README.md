@@ -35,11 +35,11 @@
 
 ## Traduce a código JavaScript las variables del ejemplo anterior
 
-let Nombre = ""
-let Apellido = ""
-let Usuario_Platzi = ""
-let Edad = 0
-let Correo_electrónico = ""
-let Mayor_edad = 0
-let Dinero_ahorrado = 0
-let Deudas = 0
+* let Nombre = ""
+* let Apellido = ""
+* let Usuario_Platzi = ""
+* let Edad = 0
+* let Correo_electrónico = ""
+* let Mayor_edad = 0
+* let Dinero_ahorrado = 0
+* let Deudas = 0
