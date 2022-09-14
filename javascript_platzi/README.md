@@ -61,4 +61,27 @@
 
 1. ¿Qué es una función?
 
-    * 
+    * Una función en JavaScript es similar a un procedimiento (un conjunto de instrucciones que realiza una tarea o calcula un valor), debe tomar alguna entrada y devolver una salida donde hay alguna relación entre la entrada y la salida.
+
+2. ¿Cuándo me sirve usar una función en mi código?
+
+    * cuando requier realizar varias operaciones u operaciones complejas
+
+3. ¿Cuál es la diferencia entre parámetros y argumentos de una función?
+
+    * **parametro**: representacion simbolica de un valor
+    * **argumento**: el valor
+
+### Convierte el siguiente código en una función
+
+const name = "Juan David";
+const lastname = "Castro Gallego";
+const completeName = name + lastname;
+const nickname = "juandc";
+
+console.log("Mi nombre es " + completeName + ", pero prefiero que me digas " + nickname + ".");
+
+```function presentacion(name, lastname, nickname) {
+    console.log("Mi nombre es " + name + " " + lastname + ", pero prefiero que me digas " + nickname + ".");
+};
+presentacion("Juan David", "Castro Gallego", "juandc");```
