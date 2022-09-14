@@ -43,3 +43,13 @@
 * let Mayor_edad = 0
 * let Dinero_ahorrado = 0
 * let Deudas = 0
+
+## Calcula e imprime las siguientes variables a partir de las variables del ejemplo anterior
+
+* let Nombre = "jhon"
+* let Apellido = "pulido"
+* let All_name = Nombre + " " + Apellido
+* let Dinero_ahorrado = 500000
+* let Deudas = 250000
+* let total = Dinero_ahorrado - Deudas
+* console.log(`${All_name}`)
