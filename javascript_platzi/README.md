@@ -1,6 +1,5 @@
 # Test de JavaScript
 
-
 ## Variables y operaciones
 
 ### Responde las siguientes preguntas
@@ -55,7 +54,11 @@
 * let Dinero_ahorrado = 500000
 * let Deudas = 250000
 * let total = Dinero_ahorrado - Deudas
-* console.log(`${All_name}`)
-* console.log(`${total}`)
+* console.log(\`${All_name}\`)
+* console.log(\`${total}\`)
 
 ## Funciones
+
+1. ¿Qué es una función?
+
+    * 
