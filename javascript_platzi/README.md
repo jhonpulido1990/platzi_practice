@@ -104,3 +104,72 @@ presentacion(name, lastname, nickname);
     * **case**: seguida de una elección con la expresión / valor que podría ser, seguido de dos puntos.
     * **break**: seguida de un punto y coma. Si la elección previa coincide con la expresión / valor, el explorador dejará de ejecutar el bloque de código aquí, y continuará a la siguiente línea de código.
     * **default**: seguido exactamente del mismo patrón de código que en los casos anteriores , excepto que el valor predeterminado no tiene opciónes después de él, y no es necesario que se use break porque no hay nada que ejecutar después de este bloque de todas formas.
+
+3. ¿Puedo combinar funciones y condicionales?
+
+    * si
+
+4. Replica el comportamiento del siguiente código que usa la sentencia switch utilizando if, else y else if
+
+    const tipoDeSuscripcion = "Basic";
+
+    switch (tipoDeSuscripcion) {
+       case "Free":
+           console.log("Solo puedes tomar los cursos gratis");
+           break;
+       case "Basic":
+           console.log("Puedes tomar casi todos los cursos de Platzi durante un mes");
+           break;
+       case "Expert":
+           console.log("Puedes tomar casi todos los cursos de Platzi durante un año");
+           break;
+       case "ExpertPlus":
+           console.log("Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año");
+           break;
+    }
+
+    solucion:
+
+    if (tipoDeSuscripcion === "Free") {
+           console.log("Solo puedes tomar los cursos gratis");
+        } else if (tipoDeSuscripcion === "Basic") {
+           console.log("Puedes tomar casi todos los cursos de Platzi durante un mes");
+        } else if (tipoDeSuscripcion === "Expert") {
+           console.log("Puedes tomar casi todos los cursos de Platzi durante un año");
+        } else if (tipoDeSuscripcion === "ExpertPlus") {
+           console.log("Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año");
+        }
+
+5. comportamiento de tu condicional anterior con if, else y else if, pero ahora solo con if (sin else ni else if).
+
+    if (tipoDeSuscripcion === "Free") {
+           console.log("Solo puedes tomar los cursos gratis");
+        }
+    if (tipoDeSuscripcion === "Basic") {
+           console.log("Puedes tomar casi todos los cursos de Platzi durante un mes");
+        }
+    if (tipoDeSuscripcion === "Expert") {
+           console.log("Puedes tomar casi todos los cursos de Platzi durante un año");
+        }
+    if (tipoDeSuscripcion === "ExpertPlus") {
+           console.log("Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año");
+        }
+
+## Ciclos
+
+### Responder las siguientes preguntas
+
+    * ¿Qué es un ciclo?:
+
+        son una forma rápida y sencilla de hacer algo repetidamente.
+
+    * ¿Qué tipos de ciclos existen en JavaScript?
+
+        [Declaración for](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration#declaracion_for)
+        Declaración do...while
+        Declaración while
+        Declaración labeled
+        Declaración break
+        Declaración continue
+        Declaración for...in
+        Declaración for...of
