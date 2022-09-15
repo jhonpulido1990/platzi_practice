@@ -159,13 +159,13 @@ presentacion(name, lastname, nickname);
 
 ### Responder las siguientes preguntas
 
-    * ¿Qué es un ciclo?:
+1. ¿Qué es un ciclo?:
 
-        son una forma rápida y sencilla de hacer algo repetidamente.
+    son una forma rápida y sencilla de hacer algo repetidamente.
 
-    * ¿Qué tipos de ciclos existen en JavaScript?
+2. ¿Qué tipos de ciclos existen en JavaScript?
 
-        [Declaración for](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration#declaracion_for)
+    2.1. [Declaración for](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration#declaracion_for)
         Declaración do...while
         Declaración while
         Declaración labeled
