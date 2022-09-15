@@ -142,7 +142,7 @@ presentacion(name, lastname, nickname);
 
 5. comportamiento de tu condicional anterior con if, else y else if, pero ahora solo con if (sin else ni else if).
 
-    if (tipoDeSuscripcion === "Free") {
+    ```if (tipoDeSuscripcion === "Free") {
            console.log("Solo puedes tomar los cursos gratis");
         }
     if (tipoDeSuscripcion === "Basic") {
@@ -153,8 +153,8 @@ presentacion(name, lastname, nickname);
         }
     if (tipoDeSuscripcion === "ExpertPlus") {
            console.log("Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año");
-        }
-
+        }```
+`
 ## Ciclos
 
 ### Responder las siguientes preguntas
