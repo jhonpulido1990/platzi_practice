@@ -154,7 +154,7 @@ presentacion(name, lastname, nickname);
     if (tipoDeSuscripcion === "ExpertPlus") {
            console.log("Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año");
         }```
-`
+
 ## Ciclos
 
 ### Responder las siguientes preguntas
@@ -173,3 +173,37 @@ presentacion(name, lastname, nickname);
     * 2.6. [Declaración continue](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration#declaracion_continue).
     * 2.7. [Declaración for...in](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration#declaracion_for...in).
     * 2.8. [Declaración for...of](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration#declaracion_for...of).
+
+3. ¿Qué es un ciclo infinito y por qué es un problema?
+
+    * Un bucle infinito es una condición que hace que un programa de computadora continúe ejecutando un comando sin fin.
+
+4. ¿Puedo mezclar ciclos y condicionales?
+
+    * si
+
+### Replica el comportamiento de los siguientes ciclos for utilizando ciclos while
+
+```for (let i = 0; i < 5; i++) {
+    console.log("El valor de i es: " + i);
+}
+
+for (let i = 10; i >= 2; i--) {
+    console.log("El valor de i es: " + i);
+}```
+
+solucion:
+
+```let i = 0;
+
+while(i < 5){
+    console.log("El valor de i es: " + i);
+    i++;
+}
+
+let i = 10;
+
+while(i >= 2){
+    console.log("El valor de i es: " + i);
+    i--;
+}```
