@@ -111,7 +111,7 @@ presentacion(name, lastname, nickname);
 
 4. Replica el comportamiento del siguiente código que usa la sentencia switch utilizando if, else y else if
 
-    const tipoDeSuscripcion = "Basic";
+    ```const tipoDeSuscripcion = "Basic";
 
     switch (tipoDeSuscripcion) {
        case "Free":
@@ -138,7 +138,7 @@ presentacion(name, lastname, nickname);
            console.log("Puedes tomar casi todos los cursos de Platzi durante un año");
         } else if (tipoDeSuscripcion === "ExpertPlus") {
            console.log("Tú y alguien más pueden tomar TODOS los cursos de Platzi durante un año");
-        }
+        }```
 
 5. comportamiento de tu condicional anterior con if, else y else if, pero ahora solo con if (sin else ni else if).
 
