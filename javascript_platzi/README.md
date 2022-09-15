@@ -165,11 +165,11 @@ presentacion(name, lastname, nickname);
 
 2. ¿Qué tipos de ciclos existen en JavaScript?
 
-    2.1. [Declaración for](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration#declaracion_for)
-        Declaración do...while
-        Declaración while
-        Declaración labeled
-        Declaración break
-        Declaración continue
-        Declaración for...in
-        Declaración for...of
+    2.1. [Declaración for](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration#declaracion_for).
+    2.2. [Declaración do...while](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration#declaracion_do...while).
+    2.3. [Declaración while](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration#declaracion_while).
+    2.4. [Declaración labeled](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration#declaracion_labeled).
+    2.5. [Declaración break](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration#declaracion_break).
+    2.6. [Declaración continue](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration#declaracion_continue).
+    2.7. [Declaración for...in](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration#declaracion_for...in).
+    2.8. [Declaración for...of](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration#declaracion_for...of).
