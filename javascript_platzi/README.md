@@ -93,3 +93,14 @@ presentacion(name, lastname, nickname);
 ## Condicionales
 
 1. ¿Qué es un condicional?
+
+    * es una condición para discernir entre una opción u otra
+
+2. ¿Qué tipos de condicionales existen en JavaScript y cuáles son sus diferencias?
+
+    * **if**: Una condición a probar, puesta dentro de los paréntesis (típicamente "¿es este valor mayor que este otro valor?", o "¿existe este valor?"), de este retorna un valor true o false (verdadero o falso).
+    * **else**: Otro conjunto de llaves, dentro de las cuales tendremos otro código puede ser cualquier código que deseemos, y sólo se ejecutará si la condición no es true.
+    * **switch**: seguida por un conjunto de paréntesis, una expresión o valor dentro de los paréntesis.
+    * **case**: seguida de una elección con la expresión / valor que podría ser, seguido de dos puntos.
+    * **break**: seguida de un punto y coma. Si la elección previa coincide con la expresión / valor, el explorador dejará de ejecutar el bloque de código aquí, y continuará a la siguiente línea de código.
+    * **default**: seguido exactamente del mismo patrón de código que en los casos anteriores , excepto que el valor predeterminado no tiene opciónes después de él, y no es necesario que se use break porque no hay nada que ejecutar después de este bloque de todas formas.
