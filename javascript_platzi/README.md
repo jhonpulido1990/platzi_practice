@@ -247,33 +247,33 @@ presentacion(name, lastname, nickname);
 
 * ```var myArray = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 
-function firstElement(ofThisArray){
-  console.log(ofThisArray[0]);
-}
+    function firstElement(ofThisArray){
+        console.log(ofThisArray[0]);
+    }
 
-firstElement(myArray);```
+    firstElement(myArray);```
 
 ### una función que pueda recibir cualquier array como parámetro e imprima todos sus elementos uno por uno
 
 * ```var myArray = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 
-function allElements(ofThisArray){
-  ofThisArray.forEach(item => {
-    console.log(item)
-  })
-}
+    function allElements(ofThisArray){
+        ofThisArray.forEach(item => {
+        console.log(item)
+        })
+    }
 
-allElements(myArray)```
+    allElements(myArray)```
 
 ### Crea una función que pueda recibir cualquier objeto como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el objeto completo)
 
 * ```var myObject = {product: "Buzz Lightyear", price: 43, category: "toys"}
 
-function allElements(ofThisObject){
-  let objectValues = Object.values(myObject)
-  objectValues.forEach(item => {
-    console.log(item)
-  })
-}
+    function allElements(ofThisObject){
+        let objectValues = Object.values(myObject)
+        objectValues.forEach(item => {
+        console.log(item)
+        })
+    }
 
-allElements(myObject);```
+    allElements(myObject);```
