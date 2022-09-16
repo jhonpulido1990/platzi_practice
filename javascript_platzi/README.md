@@ -224,3 +224,56 @@ presentacion(name, lastname, nickname);
 ## Listas
 
 ### Respond las siguientes preguntas
+
+1. ¿Qué es un array?
+
+    Los arrays son objetos similares a una lista cuyo prototipo proporciona métodos para efectuar operaciones de recorrido y de mutación. Tanto la longitud como el tipo de los elementos de un array son variables.
+
+2. ¿Qué es un objeto?
+
+    Es un tipo de dato en JavaScript en donde podemos declarar varios títulos y sus respectivos valores. Incluso hasta pueden ser considerados listas.
+
+3. ¿Cuándo es mejor usar objetos o arrays?
+
+    Depende de la situación. Ya que un array se usa cuando solo quieres tener una lista de productos, por ejemplo. Pero un objeto se usa cuando quieres saber el producto mas otros datos en relacion al producto. En lo particular, una buena practica es usar un array de objetos.
+
+4. ¿Puedo mezclar arrays con objetos o incluso objetos con arrays?
+
+    En los objetos no puede haber arrays, pero si puede haber arrays donde dentro haya objetos.
+
+### función que pueda recibir cualquier array como parámetro e imprima su primer elemento
+
+1. Crea una función que pueda recibir cualquier array como parámetro e imprima su primer elemento.
+
+* ```var myArray = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+function firstElement(ofThisArray){
+  console.log(ofThisArray[0]);
+}
+
+firstElement(myArray);```
+
+### una función que pueda recibir cualquier array como parámetro e imprima todos sus elementos uno por uno
+
+* ```var myArray = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+function allElements(ofThisArray){
+  ofThisArray.forEach(item => {
+    console.log(item)
+  })
+}
+
+allElements(myArray)```
+
+### Crea una función que pueda recibir cualquier objeto como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el objeto completo)
+
+* ```var myObject = {product: "Buzz Lightyear", price: 43, category: "toys"}
+
+function allElements(ofThisObject){
+  let objectValues = Object.values(myObject)
+  objectValues.forEach(item => {
+    console.log(item)
+  })
+}
+
+allElements(myObject);```
