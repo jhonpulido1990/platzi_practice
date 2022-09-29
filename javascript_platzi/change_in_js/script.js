@@ -20,3 +20,11 @@ console.log(h1.getAttribute('class')); // imprime la lectura del atributo
 h1.setAttribute('class', 'clasecita'); //modifica la class el primer campo es la clase a cambiar y la segunda por la que se va a cambiar
 h1.classList.add('addclase'); // adiciona una clase
 h1.classList.remove('clasecita'); // elimina una clase
+input.value = '1234'
+
+const imagen = document.createElement('img');
+imagen.setAttribute('src', 'https://static.platzi.com/media/blog/que-es-platzi-lo-sabes-bdba81d8-c3a4-43a5-b273-a135b4dfce0a.jpg')
+console.log(imagen);
+
+pid.innerHTML = '' // elimina el texto que se tiene
+pid.append(imagen);
