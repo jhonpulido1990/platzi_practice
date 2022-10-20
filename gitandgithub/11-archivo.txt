@@ -16,6 +16,12 @@ Crear una rama en el repositorio local:
 git branch nombre-de-la-rama o git checkout -b nombre-de-la-rama.
 Publicar una rama local al repositorio remoto:
 git push origin nombre-de-la-rama.
+mostrar todo el historial de las ramas y las ramas existentes
+git show-branch
+mostrar todo el historial de las ramas y las ramas existentes y algunos datos adicionales
+git show-branch --all
+abre un software grafico donde muestra todo lo que ocurrio en el proyecto
+gitk
 Recuerda que podemos ver gráficamente nuestro entorno y flujo de trabajo local con Git utilizando el comando gitk. Gitk fue el primer visor gráfico que se desarrolló para ver de manera gráfica el historial de un repositorio de Git.
 
 Repasa: Qué es branch.
