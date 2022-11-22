@@ -11,5 +11,6 @@
     "ecmascript"
   ],
   "author": "jhon jairo pulido <3825@holbertonstudents.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "type": "module"
 }
