@@ -7,7 +7,7 @@ const fnasync = () => {
 }
 
 const anotherfuntion = async () => {
-  const something = fnasync();
+  const something = await fnasync();
   console.log(something);
   console.log('Hello');
 }
