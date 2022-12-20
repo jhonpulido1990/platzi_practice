@@ -27,5 +27,5 @@ nombres[nombres.length -1] // "Richard"
 Puedes utilizar la notación de corchetes, pero necesitas obtener la longitud del array y restarle una unidad, generando mucho código que puede volverse difícil de leer.
 
 nombres[nombres.length -1] // "Richard"
-Contribución creada por Andrés Guano (Platzi Contributor).
+Contribución creada por Andrés Guano (Platzi Contributor)
 */
