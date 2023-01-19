@@ -1,0 +1,9 @@
+que es el scope?
+    el alcanse que determina la accesibilidad de las variables
+tipos de scope
+    global - funtion -block
+
+javascript variables
+    en javascript, los objetos y las funciones tambien son variables
+
+    el "scope" determina la accesibilidad de variables, objetos y funciones desde diferentes partes del codigo
