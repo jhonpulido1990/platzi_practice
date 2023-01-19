@@ -10,3 +10,6 @@ javascript variables
 
 que es closure?
     permite acceder al ambito de una funcion exterior desde una funcion interior. en javascript, las closure se crean cada vez que una funcion es creada
+    a diferencia de otros conceptos como funciones,  variables u otros. los closure no son siempre utilizados
+    aprender los conceptos es saber identificar cuando lo esta utilizando.
+    probablemente, es que ya lo has usado cientos de veces
