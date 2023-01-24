@@ -1,0 +1,39 @@
+jasvascript es sincrono por defecto y tiene un solo subproceso
+
+jasvascript es sincrono y no bloqueante, con un bucle de eventos (concurrencia),
+implementado con un unico hilo para sus interfaces de I/O
+
+jasvascript es single-threaded 
+    aun con multiples procesadores, solo se puede ejecutar tareas en un solo hilo, llamado el hilo principal
+
+bloqueante
+    una tarea no devuelve el control hasta que se ha completado
+
+no bloqueante
+    una tarea se devuelveinmediatamente con independencoa del resultado.
+    si se completo devuelve los datos, si no un error
+
+sincrono
+    las tareas se ejecutan de forma secuencial, se debe esperar a que se complete para continuar con la siguiente tarea
+
+asincronismo
+    las tareas pueden ser realizadas mas tarde, lo que hace posible que una respuesta sea procesada en diferido
+
+concurrencias en jasvascript
+    utiliza un modelo de concurrencia basado en un loop de eventos
+
+eventLoop
+    de bucle de eventos es un patron de diseño que espera y distribuye eventos o mensajes en un programa
+
+formas de manejar la asincronia en jasvascript
+    callbacks
+        una funcion que se pasa como argumento de otra funcion y que sera invocada
+    
+    promesas(es6)
+        funcion no-bloqueante y asincrona la cual puede retornar un valor ahora, en el futuro o nunca
+    
+    async/await (es2017)
+        permite estructurar una funcion asincrona sin bloqueo de una manera similar a una funcion sincronica ordinaria
+    
+    esto hace que jasvascript sea: asincrona y no bloqueante, con un bucle de eventos (concurrencia)
+    implementado con un unico hilo para sus intefaces de I/O

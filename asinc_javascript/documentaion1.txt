@@ -1,0 +1,22 @@
+eventLoop:
+    el bucle de eventos es un patron de diseño que espera y distribuye eventos o mensajes en un programa
+
+
+    memory head:
+        los objetos son asignados a un monticulo (espacio grande en memoria no organizado)
+
+        call stack (pila) lifo(last-in, first-out)
+            apila de forma organizada las instruciones de nuestro programa
+        
+        task queue:
+            cola de tareas, se maneja la concurrencia, se agregan las tareas que ya estan listas para pasar al stack (pila)
+            el stack debe estar vacio
+
+        micro task queue:
+            las promesas tienen otra forma de ejecutarse y una prioridad superior
+
+        web APIs:
+            javascript del lado del cliente: setTimeout, xmlhttprequest, file reader, dom
+                node: fs, https
+
+    tarea asignada para mover del task queueal stack,solo si el stack esta vacio
