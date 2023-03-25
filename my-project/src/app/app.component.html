@@ -1,3 +1,12 @@
+<h1>*ngIf</h1>
+<input type="text" required [(ngModel)]="Person.name">
+<p *ngIf="Person.name === 'jhon'">soy Jhon</p>
+<p *ngIf="Person.name === 'julian' && Person.age === 18; else myBlock">soy Julian</p>
+<ng-template #myBlock>
+  <p>Bloque de else</p>
+</ng-template>
+
+<hr>
 <h1>Ngmodel</h1>
 <p>Nombre {{ Person.name }}</p>
 <input type="text" #nameInput="ngModel" [(ngModel)]="Person.name">
@@ -14,17 +23,24 @@
 <p>Edad {{ Person.age }}</p>
 <button (click)="increaseAge()">Age ++</button>
 <div class="box" (scroll)="onScroll($event)">
-  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid rerum illo id eligendi molestiae, explicabo illum rem minima a inventore consequuntur, beatae reiciendis, mollitia architecto minus sequi sit magnam voluptates.
-  Amet quis assumenda laborum aut corrupti, qui aperiam soluta cumque odit sapiente quisquam repellat fugit quibusdam voluptatibus quas ea animi accusantium laboriosam quidem! Voluptatem reprehenderit repellat labore itaque, suscipit nobis?
-  Fuga nam reprehenderit officia commodi voluptate nisi laboriosam dolores at sapiente in reiciendis, perspiciatis exercitationem voluptas assumenda quasi quo iure quos adipisci. Alias a doloribus cupiditate dolorem architecto repellendus illo.
-  Eos minima numquam iste cum ex sint quas, praesentium repellendus quibusdam, harum natus ipsam. Blanditiis mollitia facilis hic vitae architecto, harum quibusdam facere qui eos suscipit maiores, eligendi nisi officiis!
-  Ab itaque pariatur suscipit sapiente tempora soluta? Qui voluptatem ea optio a iure voluptatum quisquam, fugiat aliquid beatae eveniet nam amet molestias porro accusantium, exercitationem maxime, quas iusto dolorem. Ducimus.</p>
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid rerum illo id eligendi molestiae, explicabo illum
+    rem minima a inventore consequuntur, beatae reiciendis, mollitia architecto minus sequi sit magnam voluptates.
+    Amet quis assumenda laborum aut corrupti, qui aperiam soluta cumque odit sapiente quisquam repellat fugit quibusdam
+    voluptatibus quas ea animi accusantium laboriosam quidem! Voluptatem reprehenderit repellat labore itaque, suscipit
+    nobis?
+    Fuga nam reprehenderit officia commodi voluptate nisi laboriosam dolores at sapiente in reiciendis, perspiciatis
+    exercitationem voluptas assumenda quasi quo iure quos adipisci. Alias a doloribus cupiditate dolorem architecto
+    repellendus illo.
+    Eos minima numquam iste cum ex sint quas, praesentium repellendus quibusdam, harum natus ipsam. Blanditiis mollitia
+    facilis hic vitae architecto, harum quibusdam facere qui eos suscipit maiores, eligendi nisi officiis!
+    Ab itaque pariatur suscipit sapiente tempora soluta? Qui voluptatem ea optio a iure voluptatum quisquam, fugiat
+    aliquid beatae eveniet nam amet molestias porro accusantium, exercitationem maxime, quas iusto dolorem. Ducimus.</p>
 </div>
 <p>Nombre {{ Person.name }}</p>
 <input type="text" [value]="Person.name" (keyup)="changeName($event)">
 <hr>
 <h2>Propiedades</h2>
-<button [disabled]="btnDisabled" >enviar</button>
+<button [disabled]="btnDisabled">enviar</button>
 <input type="text" [value]="name">
 <progress max="100" [value]="Person.age"></progress>
 <img width="100" [src]="img" alt="">

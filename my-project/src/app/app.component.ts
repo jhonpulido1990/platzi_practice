@@ -16,6 +16,8 @@ export class AppComponent {
     img: 'https://avatars.githubusercontent.com/u/2975064?s=200&v=4'
   }
 
+  names :string[] = ['pablo', 'pedro', 'david']
+
   toggleButton() {
     this.btnDisabled = !this.btnDisabled;
   }
