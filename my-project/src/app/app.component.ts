@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { Product } from './product.model';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,7 +18,42 @@ export class AppComponent {
     img: 'https://avatars.githubusercontent.com/u/2975064?s=200&v=4'
   }
 
-  names :string[] = ['pablo', 'pedro', 'david']
+  names :string[] = ['pablo', 'pedro', 'david'];
+
+  newName = '';
+
+  products: Product[] = [
+    {
+      name: 'el mejor juguete',
+      price: 565,
+      image: './assets/images/toy.jpg'
+    },
+    {
+      name: 'bicicleta casi nueva',
+      price: 356,
+      image: './assets/images/bike.jpg'
+    },
+    {
+      name: 'collecion de albumnes',
+      price: 34,
+      image: './assets/images/album.jpg'
+    },
+    {
+      name: 'mis libros',
+      price: 23,
+      image: './assets/images/books.jpg'
+    },
+    {
+      name: 'casa para perros',
+      price: 34,
+      image: './assets/images/house.jpg'
+    },
+    {
+      name: 'gafas',
+      price: 3434,
+      image: './assets/images/glasses.jpg'
+    }
+  ]
 
   toggleButton() {
     this.btnDisabled = !this.btnDisabled;
@@ -34,5 +71,14 @@ export class AppComponent {
   changeName(event: Event) {
     const element = event.target as HTMLInputElement;
     this.Person.name = element.value
+  }
+
+  addName() {
+    this.names.push(this.newName);
+    this.newName = '';
+  }
+
+  deleteName(index: number) {
+    this.names.splice(index, 1)
   }
 }
