@@ -8,6 +8,7 @@ import { Product } from './product.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  widthImg = 10;
   name = 'jhon';
   age = 30;
   img = 'https://avatars.githubusercontent.com/u/2975064?s=200&v=4';
@@ -21,6 +22,12 @@ export class AppComponent {
   names :string[] = ['pablo', 'pedro', 'david'];
 
   newName = '';
+
+  box = {
+    width: 100,
+    heigth: 100,
+    background: 'red'
+  }
 
   products: Product[] = [
     {
