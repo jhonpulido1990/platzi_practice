@@ -1,2 +1,9 @@
-<p><input type="text" [(ngModel)]="imgParent" /></p>
-<app-img (loaded)="onLoaded($event)" [img]="imgParent"></app-img>
+<app-nav></app-nav>
+<app-products></app-products>
+
+
+<!-- <p><input type="text" [(ngModel)]="imgParent" /></p>
+<button (click)="toggleImg()">Toggle Img</button>
+<p>{{ showImag }}</p>
+<app-img *ngIf="showImag" (loaded)="onLoaded($event)" [img]="imgParent"></app-img>
+<hr> -->
