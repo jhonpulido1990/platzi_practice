@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { Product } from 'src/app/models/product.model';
+import { Product } from '../../models/product.model';
 
 @Component({
   selector: 'app-product',
@@ -8,18 +8,22 @@ import { Product } from 'src/app/models/product.model';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent {
+
   @Input() product: Product = {
     id: '',
-    title: '',
-    image: '',
     price: 0,
-    description: '',
-    category: ''
-  }
-
+    images: [],
+    title: '',
+    category: {
+      id:'',
+      name:'',
+    },
+    description: ''
+  };
   @Output() addedProduct = new EventEmitter<Product>();
 
-  onAddToCar() {
+  onAddToCart() {
     this.addedProduct.emit(this.product);
   }
+
 }
