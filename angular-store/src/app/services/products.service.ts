@@ -1,27 +1,30 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpParams, HttpStatusCode } from '@angular/common/http';
-import { CreateProductDTO, Product, UpdateProductDTO } from '../models/product.model';
-import { environment } from '../../environments/environment';
-import { catchError, map, retry, throwError, zip } from 'rxjs';
+import { HttpClient, HttpParams, HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
+import { retry, catchError, map } from 'rxjs/operators';
+import { throwError, zip } from 'rxjs';
+
+import { Product, CreateProductDTO, UpdateProductDTO } from './../models/product.model';
+import { checkTime } from '../intercptor/time.interceptor';
+import { environment } from './../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
 
-  private apiUrl = `${ environment.API_URL }/api/products`;
+  private apiUrl = `${environment.API_URL}/api/products`;
 
   constructor(
     private http: HttpClient
   ) { }
 
   getAllProducts(limit?: number, offset?: number) {
-    let params = new HttpParams;
+    let params = new HttpParams();
     if (limit && offset) {
       params = params.set('limit', limit);
-      params = params.set('offset', offset);
+      params = params.set('offset', limit);
     }
-    return this.http.get<Product[]>(this.apiUrl, { params })
+    return this.http.get<Product[]>(this.apiUrl, { params, context: checkTime() })
     .pipe(
       retry(3),
       map(products => products.map(item => {
@@ -33,28 +36,28 @@ export class ProductsService {
     );
   }
 
+  fetchReadAndUpdate(id: string, dto: UpdateProductDTO) {
+    return zip(
+      this.getProduct(id),
+      this.update(id, dto)
+    );
+  }
+
   getProduct(id: string) {
     return this.http.get<Product>(`${this.apiUrl}/${id}`)
     .pipe(
       catchError((error: HttpErrorResponse) => {
         if (error.status === HttpStatusCode.Conflict) {
-          return throwError('Algo esta fallando en el servidor');
+          return throwError('Algo esta fallando en el server');
         }
         if (error.status === HttpStatusCode.NotFound) {
           return throwError('El producto no existe');
         }
         if (error.status === HttpStatusCode.Unauthorized) {
-          return throwError('No esta permitido');
+          return throwError('No estas permitido');
         }
-        return throwError('Algo salio mal');
+        return throwError('Ups algo salio mal');
       })
-    )
-  }
-
-  fetchReadAndUpdate(id: string, dto: UpdateProductDTO){
-    zip(
-      this.getProduct(id),
-      this.update(id, dto)
     )
   }
 
@@ -72,7 +75,7 @@ export class ProductsService {
     return this.http.put<Product>(`${this.apiUrl}/${id}`, dto);
   }
 
-  delete(id: string){
+  delete(id: string) {
     return this.http.delete<boolean>(`${this.apiUrl}/${id}`);
   }
 }

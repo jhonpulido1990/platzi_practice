@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { AuthService } from './services/auth.service';
+
 import { UsersService } from './services/users.service';
+import { FilesService } from './services/files.service';
 
 @Component({
   selector: 'app-root',
@@ -9,36 +10,51 @@ import { UsersService } from './services/users.service';
 })
 export class AppComponent {
   imgParent = '';
-  showImag = true;
+  showImg = true;
+  token = '';
+  imgRta = '';
 
   constructor(
-    private authService: AuthService,
-    private usersService: UsersService
-  ) {}
+    private usersService: UsersService,
+    private filesService: FilesService
+  ) {
+
+  }
+
 
   onLoaded(img: string) {
-    console.log('soy padre', img);
+    console.log('log padre', img);
   }
 
   toggleImg() {
-    this.showImag = !this.showImag;
+    this.showImg = !this.showImg;
   }
 
   createUser() {
     this.usersService.create({
-      name: "andres1",
-      email: "andres1@mail.com",
-      password: "1212"})
-    .subscribe(rta => {
-      console.log(rta)
+      name: 'Sebas',
+      email: 'sebas@mail.com',
+      password: '1212'
     })
+    .subscribe(rta => {
+      console.log(rta);
+    });
   }
 
-  login() {
-    this.authService.login("andres1@mail.com", "1212")
-    .subscribe(rta => {
-      console.log(rta.access_token)
-    })
+  downloadPdf() {
+    this.filesService.getFile('my.pdf', 'https://young-sands-07814.herokuapp.com/api/files/dummy.pdf', 'application/pdf')
+    .subscribe()
   }
 
+  onUpload(event: Event) {
+    const element = event.target as HTMLInputElement;
+    const file = element.files?.item(0);
+    if (file) {
+      this.filesService.uploadFile(file)
+      .subscribe(rta => {
+        this.imgRta = rta.location;
+      });
+    }
+
+  }
 }
