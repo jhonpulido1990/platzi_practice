@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-not-found',
-  templateUrl: './not-found.component.html',
+  template: `<div>
+  <img src="https://media.tenor.com/IHdlTRsmcS4AAAAC/404.gif">
+</div>`,
   styleUrls: ['./not-found.component.scss']
 })
 export class NotFoundComponent {
