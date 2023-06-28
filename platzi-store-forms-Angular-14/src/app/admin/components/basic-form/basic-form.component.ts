@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-basic-form',
@@ -7,20 +7,19 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./basic-form.component.scss'],
 })
 export class BasicFormComponent implements OnInit {
-
-  nameField = new FormControl('', [Validators.required, Validators.maxLength(10)]);
-  emailField = new FormControl('');
-  phoneField = new FormControl('');
-  colorField = new FormControl('#000000');
-  dateField = new FormControl('');
-  ageField = new FormControl(12);
-
-  categoryField = new FormControl('category-2');
-  tagField = new FormControl('');
-
-  agreeField = new FormControl(false);
-  genderField = new FormControl('');
-  zoneField = new FormControl('');
+  form = new FormGroup({
+    name: new FormControl('', [Validators.required, Validators.maxLength(10)]),
+    email: new FormControl(''),
+    phone: new FormControl(''),
+    color: new FormControl('#000000'),
+    date: new FormControl(''),
+    age: new FormControl(12),
+    category: new FormControl('category-2'),
+    tag: new FormControl(''),
+    agree: new FormControl(false),
+    gender: new FormControl(''),
+    zone: new FormControl(''),
+  });
 
   constructor() {}
 
@@ -30,8 +29,16 @@ export class BasicFormComponent implements OnInit {
     });
   }
 
+  save(event) {
+    console.log(this.form.value);
+  }
+
   getNameValue() {
-    console.log(this.nameField.value);
+    console.log(this.form.get('name'));
+  }
+
+  get nameField() {
+    return this.form.get('name');
   }
 
   get isNameFieldValid() {
@@ -40,5 +47,36 @@ export class BasicFormComponent implements OnInit {
 
   get isNameFieldInvalid() {
     return this.nameField.touched && this.nameField.invalid;
+  }
+
+  get emailField() {
+    return this.form.get('email');
+  }
+  get phoneField() {
+    return this.form.get('phone');
+  }
+  get colorField() {
+    return this.form.get('color');
+  }
+  get dateField() {
+    return this.form.get('date');
+  }
+  get ageField() {
+    return this.form.get('age');
+  }
+  get categoryField() {
+    return this.form.get('category');
+  }
+  get tagField() {
+    return this.form.get('tag');
+  }
+  get agreeField() {
+    return this.form.get('agree');
+  }
+  get genderField() {
+    return this.form.get('gender');
+  }
+  get zoneField() {
+    return this.form.get('zone');
   }
 }
