@@ -15,17 +15,37 @@
     <p>
       <strong *ngIf="nameField.hasError('maxlength') && nameField.touched">Debe tener maximo 10 caracteres</strong>
     </p>
+    <p>
+      <strong *ngIf="nameField.hasError('pattern') && nameField.touched">No debe tener caracteres</strong>
+    </p>
   </div>
 
   <p>
     Email: {{ emailField.value }}
     <input type="email" formControlName="email">
   </p>
+  <div class="messages" [class.active]="emailField.touched && phoneField.invalid">
+    <p>
+      <strong *ngIf="emailField.hasError('required')">
+        Este campo es requerido
+      </strong>
+    </p>
+    <p>
+      <strong *ngIf="emailField.hasError('email')">
+        Esto no es un emial valido
+      </strong>
+    </p>
+  </div>
 
   <p>
     Phone: {{ phoneField.value }}
     <input type="tel" formControlName="phone">
   </p>
+  <div class="messages" [class.active]="phoneField.touched && phoneField.invalid">
+    <p>
+      <strong *ngIf="phoneField.touched && phoneField.hasError('required')">Este campo es requerido</strong>
+    </p>
+  </div>
 
   <p>
     Color: {{ colorField.value }}
@@ -41,6 +61,18 @@
     Age: {{ ageField.value }}
     <input type="number" formControlName="age">
   </p>
+
+  <div class="messages" [class.active]="ageField.touched && ageField.invalid">
+    <p>
+      <strong *ngIf="ageField.hasError('required')">Este campo es requerido</strong>
+    </p>
+    <p>
+      <strong *ngIf="ageField.hasError('min')">Debe ser mayor de edad</strong>
+    </p>
+    <p>
+      <strong *ngIf="ageField.hasError('max')">Debe ser menor de 100 años</strong>
+    </p>
+  </div>
 
   <p>
     Category: {{ categoryField.value }}
