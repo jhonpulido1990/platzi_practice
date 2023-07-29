@@ -1,7 +1,14 @@
 export interface Product {
-  _id: string;
-  name: string;
+  id: string;
+  title: string;
   price: number;
   description: string;
+  images: string[];
+  category?: Category;
+}
+
+export interface Category {
+  id: number;
+  name: string;
   image: string;
 }
