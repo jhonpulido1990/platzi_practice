@@ -24,19 +24,41 @@ pool.connect((error) => {
     console.log('conectado')
 })
 
-// Rota para obter todos os produtos
-/* app.get("/", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT DISTINCT categoria FROM productos");
-    const produtos = result.rows;
-    res.json(produtos);
-  } catch (error) {
-    console.error("Erro ao buscar produtos:", error);
-    res.status(500).send("Erro interno do servidor");
-  }
-}); */
+// lista do categorias
 
-app.get("/", async (req, res) => {
+app.get('/listaCategorias', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT categoria, subcategoria1, subcategoria2 FROM productos');
+
+    const listaCategorias = {};
+
+    result.rows.forEach((row) => {
+      const categoria = row.categoria;
+      const subcategoria1 = row.subcategoria1;
+      const subcategoria2 = row.subcategoria2;
+
+      if (!listaCategorias[categoria]) {
+        listaCategorias[categoria] = {};
+      }
+
+      if (!listaCategorias[categoria][subcategoria1]) {
+        listaCategorias[categoria][subcategoria1] = [];
+      }
+
+      // Adiciona subcategoria2 apenas se não estiver presente
+      if (!listaCategorias[categoria][subcategoria1].includes(subcategoria2)) {
+        listaCategorias[categoria][subcategoria1].push(subcategoria2);
+      }
+    });
+
+    res.json(listaCategorias);
+  } catch (error) {
+    console.error('Erro ao obter dados do banco de dados', error);
+    res.status(500).send('Erro interno do servidor');
+  }
+});
+
+app.get("/productos", async (req, res) => {
   try {
     const result = await pool.query("SELECT * FROM productos");
     const produtos = result.rows;
@@ -63,7 +85,7 @@ app.get("/categorias", async (req, res) => {
   }
 });
 
-app.get("/:id", async (req, res) => {
+/* app.get("/:id", async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -82,9 +104,10 @@ app.get("/:id", async (req, res) => {
     console.error("Erro ao buscar produto:", error);
     res.status(500).send("Erro interno do servidor");
   }
-});
+}); */
 
 // Inicia o servidor
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
 });
+
