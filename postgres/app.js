@@ -16,6 +16,8 @@ const pool = new Pool({
         }
 });
 
+app.use(express.json());
+
 pool.connect((error) => {
     if (error) {
         console.log(error)
@@ -24,9 +26,33 @@ pool.connect((error) => {
     console.log('conectado')
 })
 
+// listado do productos
+
+app.get("/api/productosAs", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT * FROM productos ORDER BY Id ASC;");
+    const produtos = result.rows;
+    res.json(produtos);
+  } catch (error) {
+    console.error("Erro ao buscar produtos:", error);
+    res.status(500).send("Erro interno do servidor");
+  }
+});
+
+app.get("/api/productosDes", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT * FROM productos ORDER BY Id DESC;");
+    const produtos = result.rows;
+    res.json(produtos);
+  } catch (error) {
+    console.error("Erro ao buscar produtos:", error);
+    res.status(500).send("Erro interno do servidor");
+  }
+});
+
 // lista do categorias
 
-app.get('/listaCategorias', async (req, res) => {
+app.get('api/listaCategorias', async (req, res) => {
   try {
     const result = await pool.query('SELECT categoria, subcategoria1, subcategoria2 FROM productos');
 
@@ -58,18 +84,8 @@ app.get('/listaCategorias', async (req, res) => {
   }
 });
 
-app.get("/productos", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT * FROM productos");
-    const produtos = result.rows;
-    res.json(produtos);
-  } catch (error) {
-    console.error("Erro ao buscar produtos:", error);
-    res.status(500).send("Erro interno do servidor");
-  }
-});
-
-app.get("/categorias", async (req, res) => {
+// categorias e um produto
+app.get("/api/categorias", async (req, res) => {
   try {
     const result = await pool.query(`
       SELECT DISTINCT ON (categoria) * 
@@ -85,26 +101,83 @@ app.get("/categorias", async (req, res) => {
   }
 });
 
-/* app.get("/:id", async (req, res) => {
-  const { id } = req.params;
-
+// categorias e um produto
+/* app.get('/api/produtosPorCategoria', async (req, res) => {
   try {
-    // Use o id recebido na requisição para realizar a pesquisa
-    const result = await pool.query(`SELECT * FROM productos WHERE id = ${id}`);
+    const query = `
+      SELECT categoria, 
+             MIN(id) AS id,
+             MIN(nombre) AS nombre,
+             MIN(descripcion) AS descripcion,
+             MIN(imagen) AS imagen,
+             MIN(subcategoria1) AS subcategoria1,
+             MIN(subcategoria2) AS subcategoria2
+      FROM productos
+      GROUP BY categoria;
+    `;
 
-    if (result.rows.length === 0) {
-      // Se nenhum registro for encontrado, retorne uma resposta adequada
-      res.status(404).json({ mensagem: "Produto não encontrado" });
-    } else {
-      // Se encontrar, retorne o resultado
-      const produto = result.rows[0];
-      res.json(produto);
-    }
+    const result = await pool.query(query);
+
+    res.json(result.rows);
   } catch (error) {
-    console.error("Erro ao buscar produto:", error);
-    res.status(500).send("Erro interno do servidor");
+    console.error('Erro ao obter dados do banco de dados', error);
+    res.status(500).send('Erro interno do servidor');
   }
 }); */
+
+// pesquisa por produto pela id
+
+app.get('/api/productos/:id', async (req, res) => {
+  const productId = req.params.id;
+
+  try {
+    const result = await pool.query('SELECT * FROM productos WHERE id = $1', [productId]);
+
+    if (result.rows.length > 0) {
+      res.json(result.rows[0]); // Retorna o primeiro produto encontrado
+    } else {
+      res.status(404).send('Produto não encontrado');
+    }
+  } catch (error) {
+    console.error('Erro ao obter dados do banco de dados', error);
+    res.status(500).send('Erro interno do servidor');
+  }
+});
+
+// Rota para obter produtos com paginação e filtros
+app.get('/api/productos', async (req, res) => {
+  try {
+    const { categoria, subcategoria1, subcategoria2, page = 1, limit = 10 } = req.query;
+
+    let query = 'SELECT * FROM productos WHERE 1=1';
+    const values = [];
+
+    if (categoria) {
+      query += ' AND categoria = $1';
+      values.push(categoria);
+    }
+
+    if (subcategoria1) {
+      query += ' AND subcategoria1 = $2';
+      values.push(subcategoria1);
+    }
+
+    if (subcategoria2) {
+      query += ' AND subcategoria2 = $3';
+      values.push(subcategoria2);
+    }
+
+    const offset = (page - 1) * limit;
+
+    const result = await pool.query(query + ` OFFSET $${values.length + 1} LIMIT $${values.length + 2}`, [...values, offset, limit]);
+    const produtos = result.rows;
+
+    res.json(produtos);
+  } catch (error) {
+    console.error('Erro na consulta:', error);
+    res.status(500).send('Erro interno do servidor');
+  }
+});
 
 // Inicia o servidor
 app.listen(port, () => {
