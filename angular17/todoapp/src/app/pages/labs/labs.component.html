@@ -1,15 +1,26 @@
-<h1>hola mundo cruel</h1>
-<h2>{{ welcom }}</h2>
-<ul>
-  <li *ngFor="let tas of task">
-    {{ tas }}
-  </li>
-</ul>
-<hr/>
-<h2>{{ 'hola'.repeat(4) }}</h2>
-<p>la suma de 3 + 3 es: {{3 + 3}}</p>
-<p>hola soy {{ persona.name }} y tengo {{ persona.edad }}</p>
-<hr />
-<img [src]="persona.avatar" alt="">
-<input type="text" [value]="persona.name">
-<button [disabled]="estado">Click me</button>
+<div class="container">
+  <h1>hola mundo cruel</h1>
+  <h2>{{ welcom }}</h2>
+  <ul>
+    <li *ngFor="let tas of task">
+      {{ tas }}
+    </li>
+  </ul>
+  <hr />
+  <h2>{{ 'hola'.repeat(4) }}</h2>
+  <p>la suma de 3 + 3 es: {{3 + 3}}</p>
+  <p>hola soy {{ persona.name }} y tengo {{ persona.edad }}</p>
+  <hr />
+  <img [src]="persona.avatar" alt="">
+  <input type="text" [value]="persona.name">
+  <button [disabled]="estado">Click me</button>
+  <hr />
+  <button (click)="clickHandler()">click me</button>
+  <button (dblclick)="clickHandler()">click me</button>
+  <p>(change)</p>
+  <input type="text" [value]="persona.name" (change)="changeHander($event)">
+  <p>(keydown)</p>
+  <input type="text" [value]="persona.name" (keydown)="keydownHandler($event)">
+  <p>(keydown shift t)</p>
+  <input type="text" [value]="persona.name" (keydown.shift.t)="clickHandler()">
+</div>

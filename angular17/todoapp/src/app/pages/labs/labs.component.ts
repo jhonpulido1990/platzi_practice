@@ -25,4 +25,18 @@ export class LabsComponent {
     avatar: 'https://w3schools.com/howto/img_avatar.png'
   }
 
+  clickHandler() {
+    alert('Hola')
+  }
+
+
+  changeHander(event: Event) {
+    console.log(event)
+  }
+
+  keydownHandler(event: KeyboardEvent){
+    const input = event.target as HTMLInputElement;
+    console.log(input.value)
+  }
+
 }
