@@ -16,4 +16,13 @@ export class LabsComponent {
   ]
   name = 'jhon';
   eded = 30;
+  estado = true;
+  image = 'https://w3schools.com/howto/img_avatar.png';
+
+  persona= {
+    name: 'pepe grillo',
+    edad: 18,
+    avatar: 'https://w3schools.com/howto/img_avatar.png'
+  }
+
 }

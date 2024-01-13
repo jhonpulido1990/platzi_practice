@@ -8,8 +8,8 @@
 <hr/>
 <h2>{{ 'hola'.repeat(4) }}</h2>
 <p>la suma de 3 + 3 es: {{3 + 3}}</p>
-<p>hola soy {{ name }} y tengo {{ eded }}</p>
+<p>hola soy {{ persona.name }} y tengo {{ persona.edad }}</p>
 <hr />
-<img src="" alt="">
-<input type="text" value="Jhon">
-<button disabled="true">Click me</button>
+<img [src]="persona.avatar" alt="">
+<input type="text" [value]="persona.name">
+<button [disabled]="estado">Click me</button>
