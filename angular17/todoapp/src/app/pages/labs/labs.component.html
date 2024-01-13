@@ -9,7 +9,7 @@
   <hr />
   <h2>{{ 'hola'.repeat(4) }}</h2>
   <p>la suma de 3 + 3 es: {{3 + 3}}</p>
-  <p>hola soy {{ persona.name }} y tengo {{ persona.edad }}</p>
+  <p>hola soy {{ name() }} y tengo {{ persona.edad }}</p>
   <hr />
   <img [src]="persona.avatar" alt="">
   <input type="text" [value]="persona.name">

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-labs',
@@ -14,7 +14,7 @@ export class LabsComponent {
     'crear proyecto',
     'crear componentes'
   ]
-  name = 'jhon';
+  name = signal('jhon');
   eded = 30;
   estado = true;
   image = 'https://w3schools.com/howto/img_avatar.png';
