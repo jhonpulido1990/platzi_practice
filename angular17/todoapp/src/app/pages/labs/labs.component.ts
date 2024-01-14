@@ -1,19 +1,20 @@
 import { Component, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-labs',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './labs.component.html',
   styleUrl: './labs.component.scss'
 })
 export class LabsComponent {
   welcom = 'todoapp';
-  task = [
+  task = signal([
     'instalar angular cli',
     'crear proyecto',
     'crear componentes'
-  ]
+  ]);
   name = signal('jhon');
   eded = 30;
   estado = true;
