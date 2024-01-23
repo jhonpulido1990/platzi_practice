@@ -10,5 +10,8 @@ import { ProductsComponent } from '../../components/products/products.component'
   styleUrl: './list.component.scss'
 })
 export class ListComponent {
-
+  fromChield(event: string) {
+    console.log('desde el padre');
+    console.log(event);
+  }
 }
