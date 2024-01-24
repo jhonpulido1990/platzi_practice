@@ -1,6 +1,7 @@
 import {
   AfterViewInit,
   Component,
+  Injectable,
   Input,
   OnChanges,
   OnDestroy,
@@ -9,6 +10,10 @@ import {
   signal,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+@Injectable({
+  providedIn: 'root'
+})
 
 @Component({
   selector: 'app-counter',
