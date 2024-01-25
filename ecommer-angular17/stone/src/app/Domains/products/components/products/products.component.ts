@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Product } from '../../../shared/models/product.model';
 
 @Component({
   selector: 'app-products',
@@ -8,15 +9,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './products.component.scss'
 })
 export class ProductsComponent {
-  @Input({ required: true }) imagen: string = '';
-  @Input({ required: true }) price: number = 0;
-  @Input({ required: true }) title: string = '';
+  @Input({ required: true }) product!: Product;
 
   @Output() addToCard = new EventEmitter();
 
 
   addToCardHandler() {
-    console.log('click from chield')
-    this.addToCard.emit('hola este es un mensaje desde el hijo');
+    this.addToCard.emit(this.product);
   }
 }
